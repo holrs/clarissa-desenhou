@@ -1,0 +1,315 @@
+/* Impede a rolagem horizontal */
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffeef8;
+    color: #333;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #ff80bf;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: white;
+    margin: 0;
+}
+
+header h1 .portfolio {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffb3d9;
+}
+
+/* Estilo para a logo */
+header .logo {
+    width: 60px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px; /* Espaço entre logo e título */
+}
+
+/* Seções */
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+h2 {
+    color: #ff80bf;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Estilo da galeria */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+    overflow: hidden;  /* Previne qualquer transbordamento dentro da galeria */
+}
+
+/* Estilo das imagens e vídeos */
+.drawing img, .drawing video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Animação */
+.drawing {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+    max-width: 100%;  /* Limita a largura máxima */
+}
+
+.drawing img:hover {
+    transform: scale(1.05);
+}
+
+/* Informações ao lado da imagem */
+.info {
+    display: none;
+    margin-top: 10px;
+}
+
+.drawing:hover .info {
+    display: block;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+    text-align: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+}
+
+.modal-info {
+    color: white;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* Estilos do footer fixo */
+footer {
+    background-color: #ff80bf;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+}
+
+.close {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Seção Sobre Mim em dispositivos móveis */
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-texto {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Introdução */
+#intro {
+    background: linear-gradient(135deg, #f3dde8, #ffeef8);
+    color: #ff80bf;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.intro-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    font-family: 'Dancing Script', cursive;
+    color: #ff80bf;
+}
+
+.intro-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-explore {
+    background-color: white;
+    color: #ff80bf;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-explore:hover {
+    background-color: #ff80bf;
+    color: white;
+}
+
+/* Seção de Contato */
+#contato {
+    background: #ca639a;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    box-shadow: 1 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.contato-container h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #ffff;
+}
+
+.contato-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-contact {
+    background-color: white;
+    color: #ff80bf;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #ffb3d9;
+    color: white;
+}
+
+
+/* Estilos para a seção Sobre Mim */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Área da imagem */
+.perfil-imagem {
+    flex: 1; /* A imagem ocupará 50% do espaço */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
+    position: relative;
+}
+
+/* Imagem ajustada */
+.perfil-imagem img {
+    width: 70%; /* A imagem ocupará 100% da largura do contêiner */
+    height: auto; /* A altura será proporcional ao tamanho original da imagem */
+    border-radius: 25px;
+
+}
+
+/* Texto */
+.sobre-texto {
+    flex: 1;  /* O texto ocupará 50% do espaço */
+    text-align: left;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ff80bf;
+}
+
+.sobre-texto p {
+    margin-bottom: 15px;
+}
